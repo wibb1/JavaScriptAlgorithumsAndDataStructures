@@ -33,7 +33,7 @@ const validAnagramObjects = (str1, str2) => {
   let obj1 = createObjectFromArray(str1);
   let obj2 = createObjectFromArray(str2);
   for (let key in obj1) {
-    if (!(key in obj2 && obj1[key] == obj2[key])) return false;
+    if (!(key in obj2 && obj1[key] === obj2[key])) return false;
   }
   return true;
 };
@@ -87,3 +87,8 @@ console.log(
   validAnagramInstructor("texttwisttime", "timetwisttext") // true
 );
 // true false true false false true true
+
+// function with unknown number of arguments = another use of deconstruction (...)
+const areThereDuplicatesFrequency=(...values) => {
+  
+}
