@@ -187,20 +187,37 @@ console.log(stringifyNumbers(objStringValues));
 //  Write a function called collectStrings that accepts an object and returns an array of all the values in the object that have a type of string.
 //********************************************************************************************************************************* */
 
-// const obj = {
-//   stuff: "foo",
-//   data: {
-//       val: {
-//           thing: {
-//               info: "bar",
-//               moreInfo: {
-//                   evenMoreInfo: {
-//                       weMadeIt: "baz"
-//                   }
-//               }
-//           }
-//       }
-//   }
-// }
+const objStrings = {
+  stuff: "foo",
+  data: {
+      val: {
+          thing: {
+              info: "bar",
+              moreInfo: {
+                  evenMoreInfo: {
+                      weMadeIt: "baz"
+                  }
+              }
+          }
+      }
+  }
+}
 
-// collectStrings(obj) // ["foo", "bar", "baz"])
+const returnStrings = (arr) => {
+  if (!arr[0]) {
+    return [];
+  } else if (typeof arr[0] !== "string") {
+    return returnStrings(arr.slice(1));
+  }
+  return [arr[0]].concat(returnStrings(arr.slice(1)));
+};
+
+
+const collectStrings = (obj) => {
+  return returnStrings(objectValuesToArray(obj))
+}
+
+
+console.log(
+  collectStrings(objStrings) // ["foo", "bar", "baz"]
+)
