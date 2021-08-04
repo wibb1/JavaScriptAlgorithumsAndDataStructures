@@ -60,7 +60,7 @@ const objectValuesToArray = (obj) => {
   let oldArr = Object.values(obj);
   let newArr = [];
   for (let i of oldArr) {
-    if (typeof i === "object") {
+    if (i instanceof Object) {
       newArr = newArr.concat(objectValuesToArray(i));
     } else {
       newArr.push(i);
@@ -116,7 +116,9 @@ const capitalizeLetter = (char) => {
 };
 
 const capitalizeWord = (str) => {
-  return (!str[0]) ? [] : capitalizeLetter(str[0]).concat(capitalizeWord(str.slice(1)));
+  return !str[0]
+    ? []
+    : capitalizeLetter(str[0]).concat(capitalizeWord(str.slice(1)));
 };
 
 const capitalizeWords = (arr) => {
@@ -124,20 +126,81 @@ const capitalizeWords = (arr) => {
   return [capitalizeWord(arr[0])].concat(capitalizeWords(arr.slice(1)));
 };
 
-let words = ['i', 'am', 'learning', 'recursion'];
+let words = ["i", "am", "learning", "recursion"];
 console.log(capitalizeWords(words)); // ['I', 'AM', 'LEARNING', 'RECURSION']
 
 // * I would envision these functions as part of a class centered around manipulating word case
-
 
 //********************************************************************************************************************************* */
 //  stringifyNumbers
 //  Write a function called stringifyNumbers that takes in an object and finds all the values which are numbers and converts them to strings.
 //********************************************************************************************************************************* */
 
+let objStringValues = {
+  num: 1,
+  test: [1, 2],
+  data: {
+    val: 4,
+    info: {
+      isRight: true,
+      random: 66,
+    },
+  },
+};
 
+const stringifyNumbers = (obj) => {
+  let newObj = {};
+  for (let key in obj) {
+    console.log(obj[key], obj[key] instanceof Array)
+    if (typeof obj[key] === "number") newObj[key] = obj[key].toString();
+    else if (obj[key] instanceof Array) {
+      let arr = [];
+      for (let val of obj[key]) {
+        typeof val === "number" ? arr.push(val.toString()) : arr.push(val);
+      }
+      newObj[key] = arr;
+    } else if (obj[key] instanceof Object) {
+      newObj[key] = stringifyNumbers(obj[key]);
+    } else newObj[key] = obj[key];
+  }
+  return newObj;
+};
+
+console.log(stringifyNumbers(objStringValues));
+
+/*
+{
+    num: "1",
+    test: [],
+    data: {
+        val: "4",
+        info: {
+            isRight: true,
+            random: "66"
+        }
+    }
+}
+*/
 
 //********************************************************************************************************************************* */
 //  collectStrings
 //  Write a function called collectStrings that accepts an object and returns an array of all the values in the object that have a type of string.
 //********************************************************************************************************************************* */
+
+// const obj = {
+//   stuff: "foo",
+//   data: {
+//       val: {
+//           thing: {
+//               info: "bar",
+//               moreInfo: {
+//                   evenMoreInfo: {
+//                       weMadeIt: "baz"
+//                   }
+//               }
+//           }
+//       }
+//   }
+// }
+
+// collectStrings(obj) // ["foo", "bar", "baz"])
