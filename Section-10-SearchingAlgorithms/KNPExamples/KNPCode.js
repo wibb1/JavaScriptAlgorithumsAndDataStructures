@@ -1,45 +1,17 @@
-//*************************************************************************************
-// KNP Search - *** reworking video *** watched https://www.youtube.com/watch?v=BXCEFAzhxGY
-//*************************************************************************************
+/*************************************************************************************
+KNP Search - *** reworking video *** 
+***********************************************************************************
 
-// uses as incrementer that compares the end of the long string to the begining of the short string to allow you to bypass the values between and in the short string that match.
+Uses as incrementor that compares the end of the long string to the beginning of the short string to allow you to bypass the values between that do not match the short string.  This speeds up the search allowing you to jump to the end of the string.  This algorithm is helpful where you are looking for a repeating pattern
 
-// Psuedocode from https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
-// algorithm kmp_search:
-//     input:
-//         an array of characters, S (the text to be searched)
-//         an array of characters, W (the word sought)
-//     output:
-//         an array of integers, P (positions in S at which W is found)
-//         an integer, nP (number of positions)
+Watched https://www.youtube.com/watch?v=BXCEFAzhxGY 
+Example Pseudocode at https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
 
-//     define variables:
-//         an integer, j ← 0 (the position of the current character in S)
-//         an integer, k ← 0 (the position of the current character in W)
-//         an array of integers, T (the table, computed elsewhere)
+My attempt based on notes and review
 
-//     let nP ← 0
-
-//     while j < length(S) do
-//         if W[k] = S[j] then
-//             let j ← j + 1
-//             let k ← k + 1
-//             if k = length(W) then
-//                 (occurrence found, if only first occurrence is needed, m ← j - k  may be returned here)
-//                 let P[nP] ← j - k, nP ← nP + 1
-//                 let k ← T[k] (T[length(W)] can't be -1)
-//         else
-//             let k ← T[k]
-//             if k < 0 then
-//                 let j ← j + 1
-//                 let k ← k + 1
-
-// my attempt based on notes and review
-
-/*
-So if you want to do this you can:
-1. check to see if the current value of arrSearch (stepOneCounter) matches the current value of arrFind => if true primeCtr++; else primeCtr = secondCtr
-2. if secondCtr === arrFind.length then there is a match - set stepOneCounter = stepTwoCounter and do whatever the goal is(i.e. count the match, return the index, etc.)
+Plan of Attack:
+1. Check to see if the current value of arrSearch[primeCtr] matches the current value of arrFind => if true primeCtr++; else primeCtr = secondCtr
+2. If secondCtr === arrFind.length then there is a match - set stepOneCounter = stepTwoCounter and do whatever the goal is(i.e. count the match, return the index, etc.)
 3. check if the current value arrSearch matches the first value of the find string => if true secondCtr++; else set secondCtr to 0 
 */
 
@@ -127,3 +99,5 @@ console.log(
   myAttempt("aba", "ababababababa")
 );
 /************************************************************ */
+
+/* This was a fun exercise and I enjoyed the work.  I implemented this in one step rather than the two that are normally done beacuse the goal was only to get a count of the number rather than the positions.   */
