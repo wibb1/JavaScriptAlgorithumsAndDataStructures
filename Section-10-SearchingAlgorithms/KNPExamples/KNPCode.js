@@ -100,4 +100,4 @@ console.log(
 );
 /************************************************************ */
 
-/* This was a fun exercise and I enjoyed the work.  I implemented this in one step rather than the two that are normally done beacuse the goal was only to get a count of the number rather than the positions.   */
+/* This was a fun exercise and I enjoyed the work.  I implemented this in one step rather than the two that are normally done because the goal was only to get a count of the number rather than the positions.   */
