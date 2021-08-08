@@ -55,3 +55,11 @@ Uses recursion to execute the sort.
 * Break up the array into halves until you have arrays that are empty or only have one element
 * Once you have smaller sorted arrays merge those arrays with other sorted arrays until you are back at the full length array
 * Once the array has been merged back together return the merged (and sorted!) array
+
+# Big O Complexity
+|Algorithum|Time<br>Complexity<br>(Best)|Time<br>Complexity<br>(Average)|Time<br>Complexity<br>(Worst)|Space<br>Complexity|Use|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|Merge Sort|O(n log n)|O(n log n)|O(n log n)|O(n)|good fast sort|
+
+## Why is Merge Sort n log n complexity?
+Each split creates two arrays which means splitting is O(log n).  We then have to compare each of the arrays/values, which is O(n).  O(n) + O(log n) = O(n log n)
