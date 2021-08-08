@@ -1,67 +1,8 @@
-const myMerge = (arrI, arrJ) => {
-  let i = 0,
-    j = 0,
-    arr = [];
-  while (i < arrI.length && j < arrJ.length) {
-    if (arrI[i] < arrJ[j]) {
-      arr.push(arrI[i]);
-      i++;
-    } else {
-      arr.push(arrJ[j]);
-      j++;
-    }
-  }
-  for (; i < arrI.length; i++) {
-    arr.push(arrI[i]);
-  }
-  for (; j < arrJ.length; j++) {
-    arr.push(arrJ[j]);
-  }
-  return arr;
-};
-
-console.log(
-  myMerge([1, 2, 3], [4, 5, 6]),
-  "\n",
-  myMerge([14, 23, 54, 67, 95, 125, 136, 145], [1, 5, 7, 9, 18, 68, 98, 100])
-);
-
-const hisMerge = (arr1, arr2) => {
-  let results = [];
-  let i = 0;
-  let j = 0;
-  while (i < arr1.length && j < arr2.length) {
-    if (arr2[j] > arr1[i]) {
-      results.push(arr1[i]);
-      i++;
-    } else {
-      results.push(arr2[j]);
-      j++;
-    }
-  }
-  while (i < arr1.length) {
-    results.push(arr1[i]);
-    i++;
-  }
-  while (j < arr2.length) {
-    results.push(arr2[j]);
-    j++;
-  }
-
-  return results;
-};
-
-console.log(
-  hisMerge([1, 2, 3], [4, 5, 6]),
-  "\n",
-  hisMerge([14, 23, 54, 67, 95, 125, 136, 145], [1, 5, 7, 9, 18, 68, 98, 100])
-);
-
 const shortMerge = (arrI, arrJ) => {
   let i = 0,
     j = 0,
     arr = [];
-  while (i < arrI.length && j < arrJ.length) {
+  while (i < arrI.length || j < arrJ.length) {
     if (arrI[i] < arrJ[j] || j >= arrJ.length) {
       arr.push(arrI[i]);
       i++;
@@ -70,13 +11,22 @@ const shortMerge = (arrI, arrJ) => {
       j++;
     }
   }
-  return arr
+  return arr;
 };
 
+const mergeSort = (arr) => {
+  if (arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  //************************************************** */
+  console.log(`left = [${left}]\tright = [${right}]`);
+  //************************************************** */
+  return shortMerge(left, right);
+};
+
+const arr1 = [8, 3, 5, 4, 7, 6, 1, 2];
+const arr2 = [14, 23, 54, 67, 95, 125, 136, 145, 1, 5, 7, 9, 18, 68, 98, 100];
 console.log(
-  shortMerge([1, 2, 3], [4, 5, 6]),
-  "\n",
-  shortMerge([14, 23, 54, 67, 95, 125, 136, 145], [1, 5, 7, 9, 18, 68, 98, 100])
+   `\n***** Complete mergeSort *****\n [ ${arr1} ] => [ ${mergeSort(arr1)} ]\n`
 );
-
-
