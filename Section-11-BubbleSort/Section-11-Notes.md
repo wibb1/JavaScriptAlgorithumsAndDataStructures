@@ -15,7 +15,7 @@ https://www.toptal.com/developers/sorting-algorithms
 
 ### Why do we need to learn this
 * Sorting is an incredibly common task, so it's good to know how it works. 
-* There are many different ways to sort things, and different techniquest have their own advantages and disadvantages. When using built in sorts in various languages it is good to understnad what sorting methods they use and what their advantages and disadvantages are.
+* There are many different ways to sort things, and different techniques have their own advantages and disadvantages. When using built in sorts in various languages it is good to understand what sorting methods they use and what their advantages and disadvantages are.
 * 
 
 # JavaScript  .sort()
@@ -47,7 +47,7 @@ const compareByLen = (str1, str2) => {
 [ "Steele", "Colt", "Data Structures", "Algorithms ].sort((a, b) => a.length - b.length);
 
 # Bubble Sort
-Not commonly implemented because it's ineffiecent.  It starts at the first value (element 1) and compares it to the next value (element 2), if the first value is large than the second then they are swapped.  Traditiional bubble sort then jumps to the next index that is greater than element 2 and performs the same operation until the end of the array is reached.  The process then starts at the begining and proceeds through the entire array again until there are no swaps.
+Not commonly implemented because it's inefficient.  It starts at the first value (element 1) and compares it to the next value (element 2), if the first value is large than the second then they are swapped.  Traditional bubble sort then jumps to the next index that is greater than element 2 and performs the same operation until the end of the array is reached.  The process then starts at the beginning and proceeds through the entire array again until there are no swaps.
 
 There two ways to swap in JavaScript
 
@@ -73,4 +73,4 @@ const swap = (arr, idx1, idx2) => {
 # Bubble Sort Optimization
 Similar to what I did at the start, if you break when there are no swaps then it saves time in the sort with nearly sorted arrays.
 
-His naive bubble sort is O(n^2) which is terrible.  With the optimization to check if the array has been sorted it improves.  With a nearly sorted array complexity is O(n) which actually makes it a canidate for use in this scenario. 
+His naive bubble sort is O(n^2) which is terrible.  With the optimization to check if the array has been sorted it improves.  With a nearly sorted array complexity is O(n) which actually makes it a candidate for use in this scenario. 

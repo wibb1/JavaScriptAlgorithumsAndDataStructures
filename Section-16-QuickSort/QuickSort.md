@@ -37,10 +37,10 @@ Pick the first element in each array as the pivot
 
 ## Description
 
-- In order to implement quick sort, it's useful to first implement a function responsible for arrainging elements in an array on either side of the pivot
+- In order to implement quick sort, it's useful to first implement a function responsible for arranging elements in an array on either side of the pivot
 - Given an array, this helper function should designate an element as the pivot
 - It should then rearrange element in the array so that all values less than the pivot are moved to the left of the pivot, and all values greater than the pivot are moved to the right of the pivot
-- The order of the elementson either side of the pivot doesn't matter
+- The order of the elements on either side of the pivot doesn't matter
   The helper should do this ini place, that is, it should not create a new array
 - When complete, the helper should return the index of the pivot
 
@@ -48,11 +48,11 @@ Pick the first element in each array as the pivot
 
 - The runtime of quick sort depends in part on how the pivot is selected
 - Ideally, the pivot should be chosen so that it is roughly the median value in the data set you are sorting
-- For simplicity, we'll always choose the pivot to be the first element (we'll talk about the concequences of this later)
+- For simplicity, we'll always choose the pivot to be the first element (we'll talk about the consequences of this later)
 
 ## Psuedocode
 
-- It will help to accept three arguemnts: array, start index, end index. These can default to `start = 0` and `end = (array.length - 1)`
+- It will help to accept three arguments: array, start index, end index. These can default to `start = 0` and `end = (array.length - 1)`
 - Grab the pivot from the start of the array
 - Store the current pivot index in a variable (this will keep track of where the pivot should end up)
 - Loop through the array from the start until the end
@@ -64,11 +64,11 @@ Pick the first element in each array as the pivot
 
 - Call the pivot helper on the array
 - When the help returns the updated pivot index, recursively call the pivot helper on the subarray to either side of the index
-- Your base case occurs when you conisder a subarray with less than 2 elements
+- Your base case occurs when you consider a subarray with less than 2 elements
 
 # Big O Complexity
 
-| Algorithum | Time<br>Complexity<br>(Best) | Time<br>Complexity<br>(Average) | Time<br>Complexity<br>(Worst) | Space<br>Complexity |      Use       |
+| Algorithm | Time<br>Complexity<br>(Best) | Time<br>Complexity<br>(Average) | Time<br>Complexity<br>(Worst) | Space<br>Complexity |      Use       |
 | :--------: | :--------------------------: | :-----------------------------: | :---------------------------: | :-----------------: | :------------: |
 | Quick Sort |          O(n log n)          |           O(n log n)            |       O(n<sup>2</sup>)        |      O(log n)       | good fast sort - best if first pivot is close to the middle |
 

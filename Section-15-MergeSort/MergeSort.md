@@ -3,7 +3,7 @@
 * Time complexity O(n log n)
 * More complex
 
-1. Combination of three things - spliting, merging and sorting
+1. Combination of three things - splitting, merging and sorting
 2. Exploits the fact that arrays of 0 or 1 element are already sorted
 3. Decomposes arrays into smaller arrays of 0 or 1 element, then building up a newly sorted array (i.e. divide and conquer approach)
 
@@ -32,7 +32,7 @@ Merge each pair of arrays and sort by which is smaller:
 # Merge Arrays Implementation
 * In order to implement merge sort, it's useful to first implement a function responsible for merging two arrays.
 * Given two arrays which are sorted, this helper function should create a new array which is also sorted, and includes all the elements of the two input arrays.
-* This shuld run in **O(n+m)** time and **O(n+m)** space and **should not** modify the parameters passed to it.
+* This should run in **O(n+m)** time and **O(n+m)** space and **should not** modify the parameters passed to it.
 
 ## Psuedocode
 * Create an empty array
@@ -57,7 +57,7 @@ Uses recursion to execute the sort.
 * Once the array has been merged back together return the merged (and sorted!) array
 
 # Big O Complexity
-|Algorithum|Time<br>Complexity<br>(Best)|Time<br>Complexity<br>(Average)|Time<br>Complexity<br>(Worst)|Space<br>Complexity|Use|
+|Algorithm|Time<br>Complexity<br>(Best)|Time<br>Complexity<br>(Average)|Time<br>Complexity<br>(Worst)|Space<br>Complexity|Use|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |Merge Sort|O(n log n)|O(n log n)|O(n log n)|O(n)|good fast sort|
 

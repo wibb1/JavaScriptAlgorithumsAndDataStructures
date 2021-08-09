@@ -13,7 +13,7 @@ Insertion sort builds up the sort by gradually inserting the value to the right 
 
 ## Pseudocode
 * Pick the second element in the array
-* Comapre the selected element with the element before and swap if necessary
+* Compare the selected element with the element before and swap if necessary
 * Continue to the next element and if it is in the incorrect order, iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
 * Repeat until the array is sorted.
 
