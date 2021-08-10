@@ -49,6 +49,7 @@ class SinglyLinkedList {
     if (!this.head) return undefined;
     let current = this.head;
     this.head = current.next;
+    current.next = null;
     this.length--;
     if (this.length === 0) this.tail = null;
     return current;
@@ -59,7 +60,7 @@ let list1 = new SinglyLinkedList();
 console.log(list1);
 list1.push("I");
 console.log(list1);
-list1.push( "was");
+list1.push("was");
 console.log(list1);
 list1.push("there");
 console.log(list1);
