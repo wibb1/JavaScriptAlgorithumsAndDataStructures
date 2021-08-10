@@ -15,10 +15,9 @@
   ---------------------     
   |                   |
 head                 tail
-[4]--->[6]--->[8]--->[2]--->null
-   next   next   next   next
+[4]----->[6]----->[8]----->[2]----->null
+    next     next     next     next
 ```
-
 ## Comparison with arrays
 
 **Linked Lists:**
@@ -30,3 +29,11 @@ head                 tail
 * Indexed in order
 * Insertion and deletion can be expensive
 * Can quickly be accessed at specific index
+#
+# Big O Notation
+|Algorithm|Time<br>Complexity<br>(Best)|Time<br>Complexity<br>(Average)|Time<br>Complexity<br>(Worst)|
+|:-:|:-:|:-:|:-:|
+|Insertion|O(1)|O(1)|O(1)|
+|Removal|O(1)|O(n)|O(n)|
+|Searching|O(n)|O(n)|O(n)|
+|Access|O(n)|O(n)|O(n)|

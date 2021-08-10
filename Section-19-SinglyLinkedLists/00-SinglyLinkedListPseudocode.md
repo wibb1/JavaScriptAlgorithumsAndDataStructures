@@ -75,13 +75,3 @@ Retrieves the value at the position ("index") in the list
 * Set the property on the middle to be whatever prev is.
 * Set prev to be the value of the middle variable.
 * Set the middle variable to be the value of the next variable.
-
-
-# Big O Notation
-# Search Algorithms 
-|Algorithm|Time<br>Complexity<br>(Best)|Time<br>Complexity<br>(Average)|Time<br>Complexity<br>(Worst)|Space<br>Complexity|Use|Type|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|Insertion|O(1)|O(1)|O(1)|
-|Removal|O(1)|O(n)|O(n)|
-|Searching|O(n)|O(n)|O(n)|
-|Access|O(n)|O(n)|O(n)|
