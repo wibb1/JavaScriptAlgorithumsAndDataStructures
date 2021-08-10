@@ -83,3 +83,17 @@ Similar but can be optimized using our optimized get method. Need to account for
 * Set next and prev to null on the found node.
 * Decrement the length.
 * Return the removed node.
+
+# Reverse Pseudocode
+* Must be completed in place without creating a new list.
+* Create a variable called middle and initialize it to the head property.
+* Assign the head to the tail.
+* Assign the tail to middle.
+* Create a variable called prev and initialize it to null.
+* Create a variable called next.
+* Loop through the list.
+* Set next equal to middle.next.
+* Set middle.prev to next.
+* Set middle.next equal to prev.
+* Set prev equal to middle.
+* Set middle equal to next.
