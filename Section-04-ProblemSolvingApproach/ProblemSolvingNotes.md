@@ -23,8 +23,8 @@ Ask the following questions:
 ================================================================
 1. restate the problem in your own words
   the function takes two values and returns the sum
-2. identify the inputs, their formats, and ask how to control invalid inforamtion
-  the two values to be summed, what are the maximum values, what are the controls required, are they going to be integers,  strings, floats, etc.
+2. identify the inputs, their formats, and ask how to control invalid information
+  the two values to be summed, what are the maximum values, what are the controls required, are they going to be integers, strings, floats, etc.
 3. identify the outputs, and thier formats, how to handle errors 
   the sum is returned
 4. do the available inputs provide the information neccessary to get the outputs (its OK to not not to be able to answer this but it is worth considering)
