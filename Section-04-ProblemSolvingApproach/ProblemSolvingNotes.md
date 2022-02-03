@@ -1,5 +1,5 @@
 # How to improve
-1. devise a pln to solve the problems
+1. devise a plan to solve the problems
 2. master the common problem solving patterns
 
 # Strategies
