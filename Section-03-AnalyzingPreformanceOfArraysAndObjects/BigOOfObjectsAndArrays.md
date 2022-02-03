@@ -22,7 +22,7 @@ Arrays are used when you need an order
    Access - O(1) - access of an individual known index is O(1)
 
 ## Insertion 
-   .push - inert add end is O(1)
+   .push - insert at end is O(1)
    .shift - insert at begining is O(n) - all the items must be moved
 
 ## Removal
